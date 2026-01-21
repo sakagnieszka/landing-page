@@ -1,0 +1,170 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  line-height: 1.6;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+.nav-links li {
+  cursor: pointer;
+}
+.nav-btn {
+  padding: 8px 16px;
+  border: none;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+h1 {
+  font-size: 2.2rem;
+}
+p {
+  color: #555;
+}
+/*HERO*/
+.hero {
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+.hero p {
+  margin-bottom: 30px;
+  font-size: 1.2rem;
+}
+.hero h1,
+.hero p {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.hero button {
+  padding: 10px 20px;
+  border: none;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.hero button:hover {
+  background-color: #444;
+}
+/*FEATURES*/
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 0px 20px;
+}
+.feature-card {
+  padding: 30px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+}
+.card {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+  transition: 0.3s;
+}
+.card:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.card h3 {
+  margin-bottom: 15px;
+}
+.card p {
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+.card button {
+  padding: 8px 16px;
+  border: none;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.card button:hover {
+  background-color: #444;
+}
+.support {
+  padding: 80px 20px;
+  text-align: center;
+  background-color: #f7f7f7;
+}
+.support h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+.support p {
+  margin-bottom: 30px;
+}
+.support button {
+  padding: 10px 20px;
+  border: none;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+.support button:hover {
+  background-color: #444;
+}
+.support button:active {
+  transform: scale(0.97);
+}
+.footer {
+  padding: 16px 20px;
+  text-align: center;
+  background-color: #111;
+  color: #fff;
+}
+.footer p {
+  font-size: 0.9rem;
+  color: #aaa;
+}
+@media (max-width: 768px) {
+  .features {
+    grid-template-columns: 1fr;
+  }
+  .nav {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  .support {
+    padding: 60px 20px;
+  }
+}
+
+header,
+section {
+  margin-bottom: 80px;
+}

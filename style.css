@@ -8,6 +8,8 @@ body {
   font-family: sans-serif;
   line-height: 1.6;
 }
+
+/* NAV */
 .nav {
   display: flex;
   justify-content: space-between;
@@ -15,28 +17,43 @@ body {
   padding: 20px;
   background-color: #f0f0f0;
 }
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: relative; /* dla z-index przycisku */
+}
+
 .nav-links {
   display: flex;
   gap: 20px;
   list-style: none;
+  margin: 0;
+  padding: 0;
+  z-index: 1; /* niższy niż przycisk */
 }
+
 .nav-links li {
   cursor: pointer;
 }
+
 .nav-btn {
   padding: 8px 16px;
   border: none;
   background-color: black;
   color: white;
   cursor: pointer;
+  position: relative; /* dla z-index */
+  z-index: 10;        /* nad ul.nav-links */
+  transition: 0.3s;
 }
-h1 {
-  font-size: 2.2rem;
+
+.nav-btn:hover {
+  background-color: #444;
 }
-p {
-  color: #555;
-}
-/*HERO*/
+
+/* HERO */
 .hero {
   padding: 100px 20px;
   text-align: center;
@@ -45,17 +62,19 @@ p {
 .hero h1 {
   font-size: 2rem;
   margin-bottom: 20px;
-}
-.hero p {
-  margin-bottom: 30px;
-  font-size: 1.2rem;
-}
-.hero h1,
-.hero p {
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
 }
+
+.hero p {
+  margin-bottom: 30px;
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .hero button {
   padding: 10px 20px;
   border: none;
@@ -68,36 +87,36 @@ p {
 .hero button:hover {
   background-color: #444;
 }
-/*FEATURES*/
+
+/* FEATURES */
 .features {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
-  padding: 0px 20px;
+  padding: 0 20px;
 }
-.feature-card {
-  padding: 30px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  text-align: center;
-}
-.card {
+
+.feature-card, .card {
   padding: 20px;
   border: 1px solid #ddd;
   border-radius: 8px;
   text-align: center;
   transition: 0.3s;
 }
+
 .card:hover {
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
+
 .card h3 {
   margin-bottom: 15px;
 }
+
 .card p {
   margin-bottom: 20px;
   font-size: 1rem;
 }
+
 .card button {
   padding: 8px 16px;
   border: none;
@@ -110,18 +129,23 @@ p {
 .card button:hover {
   background-color: #444;
 }
+
+/* SUPPORT */
 .support {
   padding: 80px 20px;
   text-align: center;
   background-color: #f7f7f7;
 }
+
 .support h2 {
   font-size: 1.8rem;
   margin-bottom: 20px;
 }
+
 .support p {
   margin-bottom: 30px;
 }
+
 .support button {
   padding: 10px 20px;
   border: none;
@@ -129,22 +153,29 @@ p {
   color: white;
   cursor: pointer;
 }
+
 .support button:hover {
   background-color: #444;
 }
+
 .support button:active {
   transform: scale(0.97);
 }
+
+/* FOOTER */
 .footer {
   padding: 16px 20px;
   text-align: center;
   background-color: #111;
   color: #fff;
 }
+
 .footer p {
   font-size: 0.9rem;
   color: #aaa;
 }
+
+/* RESPONSIVE */
 @media (max-width: 768px) {
   .features {
     grid-template-columns: 1fr;
@@ -162,9 +193,4 @@ p {
   .support {
     padding: 60px 20px;
   }
-}
-
-header,
-section {
-  margin-bottom: 80px;
 }

@@ -23,3 +23,32 @@ document.addEventListener("DOMContentLoaded", () => {
     supportSection.classList.toggle("highlight");
   });
 });
+const featuresData = [
+  {
+    title: "Szybkość",
+    text: "Strony ładują się błyskawicznie.",
+  },
+  {
+    title: "Responsywność",
+    text: "Idealnie dopasowane do każdego ekranu.",
+  },
+  {
+    title: "Nowoczesność",
+    text: "Aktualne trendy i czysty design.",
+  },
+];
+
+const featuresSection = document.querySelector("#features");
+
+featuresData.forEach((feature) => {
+  const card = document.createElement("div");
+  card.classList.add("card");
+
+  card.innerHTML = `
+    <h3>${feature.title}</h3>
+    <p>${feature.text}</p>
+    <button>Dowiedz się więcej</button>
+  `;
+
+  featuresSection.appendChild(card);
+});

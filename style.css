@@ -194,3 +194,10 @@ body {
     padding: 60px 20px;
   }
 }
+.highlight {
+  background-color: #111;
+  color: white;
+  padding: 40px;
+  transition: 0.3s;
+}
+

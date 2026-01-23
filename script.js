@@ -17,3 +17,15 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("Klik w dolny Kontakt działa");
   });
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const topButton = document.querySelector(".nav-btn");
+  const supportSection = document.querySelector(".support");
+
+  topButton.addEventListener("click", () => {
+    if (supportSection.style.display === "none") {
+      supportSection.style.display = "block";
+    } else {
+      supportSection.style.display = "none";
+    }
+  });
+});

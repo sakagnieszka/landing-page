@@ -25,14 +25,17 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 const featuresData = [
   {
+    id: 1,
     title: "Szybkość",
     text: "Strony ładują się błyskawicznie.",
   },
   {
+    id: 2,
     title: "Responsywność",
     text: "Idealnie dopasowane do każdego ekranu.",
   },
   {
+    id: 3,
     title: "Nowoczesność",
     text: "Aktualne trendy i czysty design.",
   },
@@ -44,11 +47,19 @@ featuresData.forEach((feature) => {
   const card = document.createElement("div");
   card.classList.add("card");
 
+  
+  card.dataset.id = feature.id;
+
   card.innerHTML = `
     <h3>${feature.title}</h3>
     <p>${feature.text}</p>
     <button>Dowiedz się więcej</button>
   `;
+
+  card.addEventListener("click", () => {
+    console.log("Kliknięta karta ID:", feature.id);
+    alert(`Kliknięto kartę: ${feature.title}`);
+  });
 
   featuresSection.appendChild(card);
 });

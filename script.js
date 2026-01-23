@@ -29,3 +29,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+const supportTitle = document.querySelector(".support h2");
+const supportButton = document.querySelector(".support button");
+
+supportButton.addEventListener("click", () => {
+  supportTitle.textContent = "Dziękujemy za kontakt!";
+});

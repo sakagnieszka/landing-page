@@ -56,10 +56,17 @@ featuresData.forEach((feature) => {
     <button>Dowiedz się więcej</button>
   `;
 
-  card.addEventListener("click", () => {
-    console.log("Kliknięta karta ID:", feature.id);
-    alert(`Kliknięto kartę: ${feature.title}`);
-  });
+card.addEventListener("click", () => {
+  // 1. usuwamy active ze wszystkich kart
+  const allCards = document.querySelectorAll(".card");
+  allCards.forEach(c => c.classList.remove("active"));
+
+  // 2. dodajemy active tylko klikniętej
+  card.classList.add("active");
+
+  console.log("Aktywna karta:", feature.title);
+});
+
 
   featuresSection.appendChild(card);
 });

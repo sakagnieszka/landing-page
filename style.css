@@ -45,7 +45,7 @@ body {
   color: white;
   cursor: pointer;
   position: relative; /* dla z-index */
-  z-index: 10;        /* nad ul.nav-links */
+  z-index: 10; /* nad ul.nav-links */
   transition: 0.3s;
 }
 
@@ -96,7 +96,8 @@ body {
   padding: 0 20px;
 }
 
-.feature-card, .card {
+.feature-card,
+.card {
   padding: 20px;
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -105,7 +106,7 @@ body {
 }
 
 .card:hover {
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .card h3 {
@@ -201,7 +202,6 @@ body {
   transition: 0.3s;
 }
 .card.active {
-  border: 2px solid black;
+  border: 2px solid blue;
   background-color: #f0f0f0;
 }
-

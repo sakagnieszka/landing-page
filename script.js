@@ -51,6 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
         card.classList.add("active");
 
         console.log("Aktywna karta:", feature.title);
+        console.log("ID aktywnej karty:", activeCardId);
       });
 
       featuresSection.appendChild(card);

@@ -35,7 +35,10 @@ document.addEventListener("DOMContentLoaded", () => {
       const card = document.createElement("div");
       card.classList.add("card");
       card.dataset.id = feature.id;
-
+// UI ZALEŻY OD STATE
+if (feature.id === activeCardId) {
+  card.classList.add("active");
+}
       card.innerHTML = `
     <h3>${feature.title}</h3>
     <p>${feature.text}</p>
@@ -43,16 +46,10 @@ document.addEventListener("DOMContentLoaded", () => {
   `;
 
       card.addEventListener("click", () => {
-        // 1. usuwamy active ze wszystkich kart
-        const allCards = document.querySelectorAll(".card");
-        allCards.forEach((c) => c.classList.remove("active"));
-
-        // 2. dodajemy active tylko klikniętej
-        card.classList.add("active");
-
-        console.log("Aktywna karta:", feature.title);
-        console.log("ID aktywnej karty:", activeCardId);
-      });
+    activeCardId = feature.id;
+  // ! zamiast manipulować UI:
+  renderCards();
+});
 
       featuresSection.appendChild(card);
     });

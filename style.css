@@ -87,7 +87,15 @@ body {
 .hero button:hover {
   background-color: #444;
 }
-
+.card.liked {
+  border-color: red;
+}
+.like-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
 /* FEATURES */
 .features {
   display: grid;

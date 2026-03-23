@@ -15,16 +15,19 @@ document.addEventListener("DOMContentLoaded", () => {
       id: 1,
       title: "Szybkość",
       text: "Strony ładują się błyskawicznie.",
+      liked: false
     },
     {
       id: 2,
       title: "Responsywność",
       text: "Idealnie dopasowane do każdego ekranu.",
+      liked: false
     },
     {
       id: 3,
       title: "Nowoczesność",
       text: "Aktualne trendy i czysty design.",
+      liked: false
     },
   ];
   // ===== RENDER UI =====
@@ -35,22 +38,33 @@ document.addEventListener("DOMContentLoaded", () => {
       const card = document.createElement("div");
       card.classList.add("card");
       card.dataset.id = feature.id;
-// UI ZALEŻY OD STATE
-if (feature.id === activeCardId) {
-  card.classList.add("active");
-}
+      // UI ZALEŻY OD STATE
+      if (feature.id === activeCardId) 
+        card.classList.add("active");
+      if (feature.liked) card.classList.add("liked");
+      
       card.innerHTML = `
     <h3>${feature.title}</h3>
     <p>${feature.text}</p>
-    <button>Dowiedz się więcej</button>
+    <button class="like-btn">${feature.liked ? "❤️" : "🤍"}
+    </button>
   `;
-
+ // Klik na kartę → toggle active
       card.addEventListener("click", () => {
-    activeCardId = feature.id;
-  // ! zamiast manipulować UI:
+        if (activeCardId === feature.id) {
+          activeCardId = null;
+        } else { activeCardId = feature.id;
+        }
+        // !render od nowa
+        renderCards();
+      });
+// Klik na przycisk serduszko → toggle liked
+const likeBtn = card.querySelector(".like-btn");
+likeBtn.addEventListener("click", (e) => {
+  e.stopPropagation();// nie zmienia active przy kliknięciu serduszka
+  feature.liked = !feature.liked;
   renderCards();
 });
-
       featuresSection.appendChild(card);
     });
   } // Tu zamykamy funkcje
